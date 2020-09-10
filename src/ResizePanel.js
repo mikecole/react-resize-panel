@@ -82,10 +82,12 @@ class ResizePanel extends React.Component {
     // modify the size based on the drag delta
     let delta = this.isHorizontal() ? ui.deltaX : ui.deltaY;
     this.setState((s, p) => ({ size: Math.max(10, s.size - delta * factor) }));
+    console.log('handleDrag');
   };
 
   handleDragEnd = (e, ui) => {
     this.validateSize();
+    console.log('handleDragEnd');
   };
 
   render() {
